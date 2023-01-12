@@ -17,3 +17,18 @@ for (const listItemEl of listItemElements) {
 }
 
 console.log(h1);
+
+// Traversing Child Nodes
+// const ul = document.querySelector("ul");
+
+// console.log(ul.children[1]);
+
+// console.log(ul.childNodes);
+
+// console.log(ul.firstElementChild);
+
+// console.log(ul.firstChild);
+
+// console.log(ul.lastElementChild);
+
+// console.log(ul.lastChild);
