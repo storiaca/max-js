@@ -1,1 +1,3 @@
 # max-js
+
+## Vanilla js
