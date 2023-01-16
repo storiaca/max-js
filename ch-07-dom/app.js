@@ -27,8 +27,8 @@ console.log(h1);
 
 // console.log(ul.firstElementChild);
 
-// console.log(ul.firstChild);
+console.log(ul.firstChild);
 
-// console.log(ul.lastElementChild);
+console.log(ul.lastElementChild);
 
-// console.log(ul.lastChild);
+console.log(ul.lastChild);
