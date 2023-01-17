@@ -40,3 +40,13 @@ console.log(h1);
 // console.log(liFirst.parentNode); // ul
 
 // console.log(liFirst.closest('body')); // body
+
+// Selecting siblings elements
+
+const ul = document.querySelector("ul");
+
+console.log(ul.previousSibling); // text node
+
+console.log(ul.previousElementSibling); // header
+
+console.log(ul.nextElementSibling); // input
