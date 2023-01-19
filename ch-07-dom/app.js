@@ -53,7 +53,26 @@ console.log(h1);
 
 // DOM Traversasl vs Query Methods
 
-const ul = document.body.firstElementChild.nextElementSibling;
-const firstLi = ul.firstElementChild;
-console.log(ul); // ul
-console.log(firstLi); // <li class="list-item">
+// const ul = document.body.firstElementChild.nextElementSibling;
+// const firstLi = ul.firstElementChild;
+// console.log(ul); // ul
+// console.log(firstLi); // <li class="list-item">
+
+// Styling DOM Elements
+
+const section = document.querySelector("section");
+const button = document.querySelector("button");
+
+// section.style.backgroundColor = "green";
+
+section.className = "red-bg";
+
+button.addEventListener("click", () => {
+  // if (section.className === "red-bg visible") {
+  //   section.className = "red-bg invisible";
+  // } else {
+  //   section.className = "red-bg visible";
+  // }
+
+  section.classList.toggle("invisible");
+});
