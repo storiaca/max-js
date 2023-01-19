@@ -43,10 +43,17 @@ console.log(h1);
 
 // Selecting siblings elements
 
-const ul = document.querySelector("ul");
+// const ul = document.querySelector("ul");
 
-console.log(ul.previousSibling); // text node
+// console.log(ul.previousSibling); // text node
 
-console.log(ul.previousElementSibling); // header
+// console.log(ul.previousElementSibling); // header
 
-console.log(ul.nextElementSibling); // input
+// console.log(ul.nextElementSibling); // input
+
+// DOM Traversasl vs Query Methods
+
+const ul = document.body.firstElementChild.nextElementSibling;
+const firstLi = ul.firstElementChild;
+console.log(ul); // ul
+console.log(firstLi); // <li class="list-item">
