@@ -60,19 +60,29 @@ console.log(h1);
 
 // Styling DOM Elements
 
-const section = document.querySelector("section");
-const button = document.querySelector("button");
+// const section = document.querySelector("section");
+// const button = document.querySelector("button");
 
 // section.style.backgroundColor = "green";
 
-section.className = "red-bg";
+// section.className = "red-bg";
 
-button.addEventListener("click", () => {
-  // if (section.className === "red-bg visible") {
-  //   section.className = "red-bg invisible";
-  // } else {
-  //   section.className = "red-bg visible";
-  // }
+// button.addEventListener("click", () => {
+//   // if (section.className === "red-bg visible") {
+//   //   section.className = "red-bg invisible";
+//   // } else {
+//   //   section.className = "red-bg visible";
+//   // }
 
-  section.classList.toggle("invisible");
-});
+//   section.classList.toggle("invisible");
+// });
+
+// Adding elements via HTML in Code
+
+const list = document.querySelector("ul");
+
+list.innerHTML = list.innerHTML + "<li>Item 4</li>"; // not good solution if we want to add  content on existing content
+
+const div = document.querySelector("div");
+
+div.insertAdjacentHTML("beforeend", "<p>Something went wrong</p>"); // better solution for adding content
