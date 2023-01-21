@@ -89,11 +89,35 @@ console.log(h1);
 
 // Adding Elements via createElement()
 
+// const list = document.querySelector("ul");
+
+// const newLi = document.createElement("li");
+
+// list.appendChild(newLi);
+
+// newLi.textContent = "Item 4";
+// console.log(newLi);
+
+// Inserting DOM Elements
+
 const list = document.querySelector("ul");
 
+// list.append("Some text"); // We can add text, nodes, multiple nodes with append, no support for IE
+
+// const newLi = document.createElement("li");
+// newLi.textContent = "Item 4";
+
+// list.prepend(newLi);
+
+// list.lastElementChild.before(newLi); // no support for safari
+
+// list.lastElementChild.after(newLi); // no support for safari
+
+// list.firstElementChild.replaceWith(newLi);
+
+// Drugi nacin da ubacimo element
+const secondLi = list.children[1];
 const newLi = document.createElement("li");
-
-list.appendChild(newLi);
-
 newLi.textContent = "Item 4";
-console.log(newLi);
+
+secondLi.insertAdjacentElement("afterend", newLi);
