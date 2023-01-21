@@ -79,10 +79,21 @@ console.log(h1);
 
 // Adding elements via HTML in Code
 
+// const list = document.querySelector("ul");
+
+// list.innerHTML = list.innerHTML + "<li>Item 4</li>"; // not good solution if we want to add  content on existing content
+
+// const div = document.querySelector("div");
+
+// div.insertAdjacentHTML("beforeend", "<p>Something went wrong</p>"); // better solution for adding content
+
+// Adding Elements via createElement()
+
 const list = document.querySelector("ul");
 
-list.innerHTML = list.innerHTML + "<li>Item 4</li>"; // not good solution if we want to add  content on existing content
+const newLi = document.createElement("li");
 
-const div = document.querySelector("div");
+list.appendChild(newLi);
 
-div.insertAdjacentHTML("beforeend", "<p>Something went wrong</p>"); // better solution for adding content
+newLi.textContent = "Item 4";
+console.log(newLi);
