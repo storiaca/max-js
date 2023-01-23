@@ -100,7 +100,7 @@ console.log(h1);
 
 // Inserting DOM Elements
 
-const list = document.querySelector("ul");
+// const list = document.querySelector("ul");
 
 // list.append("Some text"); // We can add text, nodes, multiple nodes with append, no support for IE
 
@@ -116,8 +116,18 @@ const list = document.querySelector("ul");
 // list.firstElementChild.replaceWith(newLi);
 
 // Drugi nacin da ubacimo element
-const secondLi = list.children[1];
+// const secondLi = list.children[1];
+// const newLi = document.createElement("li");
+// newLi.textContent = "Item 4";
+
+// secondLi.insertAdjacentElement("afterend", newLi);
+
+// Cloning DOM Nodes
+const list = document.querySelector("ul");
 const newLi = document.createElement("li");
 newLi.textContent = "Item 4";
 
-secondLi.insertAdjacentElement("afterend", newLi);
+newLi.cloneNode(false); // defaul, only clone element, not nested elements if we have in node
+const newLi2 = newLi.cloneNode(true); // clone element and all nested elements that in node
+
+list.append(newLi, newLi2);
