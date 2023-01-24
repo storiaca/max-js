@@ -123,11 +123,27 @@ console.log(h1);
 // secondLi.insertAdjacentElement("afterend", newLi);
 
 // Cloning DOM Nodes
+// const list = document.querySelector("ul");
+// const newLi = document.createElement("li");
+// newLi.textContent = "Item 4";
+
+// newLi.cloneNode(false); // defaul, only clone element, not nested elements if we have in node
+// const newLi2 = newLi.cloneNode(true); // clone element and all nested elements that in node
+
+// list.append(newLi, newLi2);
+
+// Live Node Lists vs static Node Lists
 const list = document.querySelector("ul");
+
+const listItems = list.querySelectorAll("li"); // none live list, just snapshot of dom, doesen't update
+const listItems2 = list.getElementsByTagName("li");
+
 const newLi = document.createElement("li");
 newLi.textContent = "Item 4";
+list.append(newLi);
 
-newLi.cloneNode(false); // defaul, only clone element, not nested elements if we have in node
-const newLi2 = newLi.cloneNode(true); // clone element and all nested elements that in node
+console.log(listItems); // no update, but we cna change the content
+listItems[0].textContent = "Item 11";
+console.log(listItems2); // HTMLCollection, can be updated
 
-list.append(newLi, newLi2);
+// document.getElementBy // ovo uvek vraca niz objekte nad kojima mozemo da manipulisemo
