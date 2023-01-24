@@ -133,17 +133,24 @@ console.log(h1);
 // list.append(newLi, newLi2);
 
 // Live Node Lists vs static Node Lists
+// const list = document.querySelector("ul");
+
+// const listItems = list.querySelectorAll("li"); // none live list, just snapshot of dom, doesen't update
+// const listItems2 = list.getElementsByTagName("li");
+
+// const newLi = document.createElement("li");
+// newLi.textContent = "Item 4";
+// list.append(newLi);
+
+// console.log(listItems); // no update, but we cna change the content
+// listItems[0].textContent = "Item 11";
+// console.log(listItems2); // HTMLCollection, can be updated
+
+// // document.getElementBy // ovo uvek vraca niz objekte nad kojima mozemo da manipulisemo
+
+// Removing elements
 const list = document.querySelector("ul");
 
-const listItems = list.querySelectorAll("li"); // none live list, just snapshot of dom, doesen't update
-const listItems2 = list.getElementsByTagName("li");
+list.remove() // removes the list from the DOM, no supprt for IE
 
-const newLi = document.createElement("li");
-newLi.textContent = "Item 4";
-list.append(newLi);
-
-console.log(listItems); // no update, but we cna change the content
-listItems[0].textContent = "Item 11";
-console.log(listItems2); // HTMLCollection, can be updated
-
-// document.getElementBy // ovo uvek vraca niz objekte nad kojima mozemo da manipulisemo
+list.parentElement.removeChild(list) // this can be used in all browsers
