@@ -35,16 +35,28 @@
 
 // console.log(personalData[1]);
 
-// push, pop, unshift, shift
+/* === push, pop, unshift, shift === */
 
+// const hobbies = ["Sports", "Cooking"];
+
+// hobbies.push("Reading"); // add at the end of array, return number
+// hobbies.unshift("Coding"); // add at the beginning of array, return number
+// const popedValue = hobbies.pop(); // remove last element from array, we can store that element in variable, returns string
+// hobbies.shift(); // removes first element from array
+// console.log(hobbies);
+
+// hobbies[1] = "Coding";
+// hobbies[5] = "Reading"; // rarely used
+// console.log(hobbies, hobbies[4]);
+
+/* === The splice() Method === */
 const hobbies = ["Sports", "Cooking"];
 
-hobbies.push("Reading"); // add at the end of array, return number
-hobbies.unshift("Coding"); // add at the beginning of array, return number
-const popedValue = hobbies.pop(); // remove last element from array, we can store that element in variable, returns string
-hobbies.shift(); // removes first element from array
+//hobbies.splice(0, 0, "Good Food"); // add at the beginnig of an array
+hobbies.splice(1, 0, "Good Food"); // add at the first index of an array
+
+const removedElement = hobbies.splice(0, 1); // removes one element from the start of an array, returns removed element
+//hobbies.splice(0); // removes all elements from the array
+const removedFromEndElements = hobbies.splice(-1, 1); // removes from the end of an array one element
 console.log(hobbies);
 
-hobbies[1] = "Coding";
-hobbies[5] = "Reading"; // rarely used
-console.log(hobbies, hobbies[4]);
