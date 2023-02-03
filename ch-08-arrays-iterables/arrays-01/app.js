@@ -50,13 +50,32 @@
 // console.log(hobbies, hobbies[4]);
 
 /* === The splice() Method === */
-const hobbies = ["Sports", "Cooking"];
+// const hobbies = ["Sports", "Cooking"];
 
-//hobbies.splice(0, 0, "Good Food"); // add at the beginnig of an array
-hobbies.splice(1, 0, "Good Food"); // add at the first index of an array
+// //hobbies.splice(0, 0, "Good Food"); // add at the beginnig of an array
+// hobbies.splice(1, 0, "Good Food"); // add at the first index of an array
 
-const removedElement = hobbies.splice(0, 1); // removes one element from the start of an array, returns removed element
-//hobbies.splice(0); // removes all elements from the array
-const removedFromEndElements = hobbies.splice(-1, 1); // removes from the end of an array one element
-console.log(hobbies);
+// const removedElement = hobbies.splice(0, 1); // removes one element from the start of an array, returns removed element
+// //hobbies.splice(0); // removes all elements from the array
+// const removedFromEndElements = hobbies.splice(-1, 1); // removes from the end of an array one element
+// console.log(hobbies);
+
+/* === Selecting ranges and creating copies woth slice() === */
+const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+// slice returns brand new array, good for copying
+const storedResults = testResults.slice(); // this is copy, when we change this variable it won't have effect on original array
+storedResults.push(5.91);
+
+// we can also specify start and end index, what should be copied
+const newCopyResult = testResults.slice(0, 2); // result: [1, 5.3]
+console.log(newCopyResult);
+// if we use negative numbers, both needs to be negative
+const negativeResult = testResults.slice(-3, -1); // [10.99, -5]
+console.log(negativeResult);
+
+// we can select from specific index, write only 1 argument in slice
+const fromResult = testResults.slice(2); // start from second index and selet all, result: [1.5, 10.99, -5, 10]
+console.log(fromResult);
+
+console.log(storedResults, testResults);
 
