@@ -61,21 +61,28 @@
 // console.log(hobbies);
 
 /* === Selecting ranges and creating copies woth slice() === */
+// const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+// // slice returns brand new array, good for copying
+// const storedResults = testResults.slice(); // this is copy, when we change this variable it won't have effect on original array
+// storedResults.push(5.91);
+
+// // we can also specify start and end index, what should be copied
+// const newCopyResult = testResults.slice(0, 2); // result: [1, 5.3]
+// console.log(newCopyResult);
+// // if we use negative numbers, both needs to be negative
+// const negativeResult = testResults.slice(-3, -1); // [10.99, -5]
+// console.log(negativeResult);
+
+// // we can select from specific index, write only 1 argument in slice
+// const fromResult = testResults.slice(2); // start from second index and selet all, result: [1.5, 10.99, -5, 10]
+// console.log(fromResult);
+
+// console.log(storedResults, testResults);
+
+/* === Adding Arrays to Arrays with concat() === */
 const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
-// slice returns brand new array, good for copying
-const storedResults = testResults.slice(); // this is copy, when we change this variable it won't have effect on original array
-storedResults.push(5.91);
 
-// we can also specify start and end index, what should be copied
-const newCopyResult = testResults.slice(0, 2); // result: [1, 5.3]
-console.log(newCopyResult);
-// if we use negative numbers, both needs to be negative
-const negativeResult = testResults.slice(-3, -1); // [10.99, -5]
-console.log(negativeResult);
-
-// we can select from specific index, write only 1 argument in slice
-const fromResult = testResults.slice(2); // start from second index and selet all, result: [1.5, 10.99, -5, 10]
-console.log(fromResult);
-
-console.log(storedResults, testResults);
+const storedResults = testResults.concat([3.99, 2]); // we can add elements at the end array, combine two arrays, we get new array
+console.log(testResults);
+console.log(storedResults);
 
