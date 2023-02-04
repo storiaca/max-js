@@ -167,3 +167,6 @@
 const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
 
 console.log(testResults.includes(10.99)); // result: true
+
+// same thing with indexOf()
+console.log(testResults.indexOf(10.99) !== -1);
