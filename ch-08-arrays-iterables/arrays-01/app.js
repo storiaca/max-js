@@ -87,9 +87,9 @@
 // console.log(storedResults);
 
 /* === Retrieving indexes with indexOf() and lastIndexOf() === */
-const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10];
+//const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10];
 
-console.log(testResults.indexOf(1.5)); // result: 2, if we have 2 same values returns firts to find
+//console.log(testResults.indexOf(1.5)); // result: 2, if we have 2 same values returns firts to find
 
 /* 
   indexOf() => (method) Array<number>.indexOf(searchElement: number, fromIndex?: number | undefined): number
@@ -100,7 +100,7 @@ console.log(testResults.indexOf(1.5)); // result: 2, if we have 2 same values re
 
   @param fromIndex — The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0. 
 */
-console.log(testResults.lastIndexOf(1.5)); // look from the end of an array, result: 4
+//console.log(testResults.lastIndexOf(1.5)); // look from the end of an array, result: 4
 /* 
   lastIndexOf() => (method) Array<number>.lastIndexOf(searchElement: number, fromIndex?: number | undefined): number
 
@@ -111,5 +111,55 @@ console.log(testResults.lastIndexOf(1.5)); // look from the end of an array, res
   @param fromIndex — The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array.
 */
 
+//const personData = [{ name: "Max" }, { name: "Manuel" }];
+//console.log(personData.indexOf({ name: "Manuel" })); // result: -1, this metod don't work well with other types, except numbers
+
+/* === Finding Stuff: find() and findIndex() === */
 const personData = [{ name: "Max" }, { name: "Manuel" }];
-console.log(personData.indexOf({ name: "Manuel" })); // result: -1, this metod don't work well with other types, except numbers
+
+const manuel = personData.find((person, idx, persons) => {
+  return person.name === "Manuel";
+}); // stops when find first element is found, returns same object, not new object
+manuel.name = "Anna";
+console.log(manuel);
+/* 
+  find() => (method) Array<{ name: string; }>.find<{
+    name: string;
+  }>(predicate: (this: void, value: {
+    name: string;
+  }, index: number, obj: {
+    name: string;
+  }[]) => value is {
+    name: string;
+  }, thisArg?: any): {
+    name: string;
+  } | undefined (+1 overload)
+
+  Returns the value of the first element in the array where predicate is true, and undefined otherwise.
+
+  @param predicate
+  find calls predicate once for each element of the array, in ascending order, until it finds one where predicate returns true. If such an element is found, find immediately returns that element value. Otherwise, find returns undefined.
+
+  @param thisArg
+  If provided, it will be used as the this value for each invocation of predicate. If it is not provided, undefined is used instead.
+*/
+
+const maxIndex = personData.findIndex((person, idx, persons) => {
+  return person.name === "Max";
+});
+console.log(maxIndex);
+/* 
+  findIndex() => (method) Array<{ name: string; }>.findIndex(predicate: (value: {
+    name: string;
+  }, index: number, obj: {
+    name: string;
+  }[]) => unknown, thisArg?: any): number
+
+  Returns the index of the first element in the array where predicate is true, and -1 otherwise.
+
+  @param predicate
+  find calls predicate once for each element of the array, in ascending order, until it finds one where predicate returns true. If such an element is found, findIndex immediately returns that element index. Otherwise, findIndex returns -1.
+
+  @param thisArg
+  If provided, it will be used as the this value for each invocation of predicate. If it is not provided, undefined is used instead.
+*/
