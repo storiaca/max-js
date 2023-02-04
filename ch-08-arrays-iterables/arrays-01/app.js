@@ -80,9 +80,36 @@
 // console.log(storedResults, testResults);
 
 /* === Adding Arrays to Arrays with concat() === */
-const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+// const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
 
-const storedResults = testResults.concat([3.99, 2]); // we can add elements at the end array, combine two arrays, we get new array
-console.log(testResults);
-console.log(storedResults);
+// const storedResults = testResults.concat([3.99, 2]); // we can add elements at the end array, combine two arrays, we get new array
+// console.log(testResults);
+// console.log(storedResults);
 
+/* === Retrieving indexes with indexOf() and lastIndexOf() === */
+const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10];
+
+console.log(testResults.indexOf(1.5)); // result: 2, if we have 2 same values returns firts to find
+
+/* 
+  indexOf() => (method) Array<number>.indexOf(searchElement: number, fromIndex?: number | undefined): number
+
+  Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
+
+  @param searchElement — The value to locate in the array.
+
+  @param fromIndex — The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0. 
+*/
+console.log(testResults.lastIndexOf(1.5)); // look from the end of an array, result: 4
+/* 
+  lastIndexOf() => (method) Array<number>.lastIndexOf(searchElement: number, fromIndex?: number | undefined): number
+
+  Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present.
+
+  @param searchElement — The value to locate in the array.
+
+  @param fromIndex — The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array.
+*/
+
+const personData = [{ name: "Max" }, { name: "Manuel" }];
+console.log(personData.indexOf({ name: "Manuel" })); // result: -1, this metod don't work well with other types, except numbers
