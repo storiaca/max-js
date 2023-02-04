@@ -115,13 +115,13 @@
 //console.log(personData.indexOf({ name: "Manuel" })); // result: -1, this metod don't work well with other types, except numbers
 
 /* === Finding Stuff: find() and findIndex() === */
-const personData = [{ name: "Max" }, { name: "Manuel" }];
+// const personData = [{ name: "Max" }, { name: "Manuel" }];
 
-const manuel = personData.find((person, idx, persons) => {
-  return person.name === "Manuel";
-}); // stops when find first element is found, returns same object, not new object
-manuel.name = "Anna";
-console.log(manuel);
+// const manuel = personData.find((person, idx, persons) => {
+//   return person.name === "Manuel";
+// }); // stops when find first element is found, returns same object, not new object
+// manuel.name = "Anna";
+// console.log(manuel);
 /* 
   find() => (method) Array<{ name: string; }>.find<{
     name: string;
@@ -144,10 +144,10 @@ console.log(manuel);
   If provided, it will be used as the this value for each invocation of predicate. If it is not provided, undefined is used instead.
 */
 
-const maxIndex = personData.findIndex((person, idx, persons) => {
-  return person.name === "Max";
-});
-console.log(maxIndex);
+// const maxIndex = personData.findIndex((person, idx, persons) => {
+//   return person.name === "Max";
+// });
+// console.log(maxIndex);
 /* 
   findIndex() => (method) Array<{ name: string; }>.findIndex(predicate: (value: {
     name: string;
@@ -163,3 +163,7 @@ console.log(maxIndex);
   @param thisArg
   If provided, it will be used as the this value for each invocation of predicate. If it is not provided, undefined is used instead.
 */
+/* === includes() === */
+const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+
+console.log(testResults.includes(10.99)); // result: true
