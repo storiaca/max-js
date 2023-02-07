@@ -164,9 +164,33 @@
   If provided, it will be used as the this value for each invocation of predicate. If it is not provided, undefined is used instead.
 */
 /* === includes() === */
-const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+// const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
 
-console.log(testResults.includes(10.99)); // result: true
+// console.log(testResults.includes(10.99)); // result: true
 
-// same thing with indexOf()
-console.log(testResults.indexOf(10.99) !== -1);
+// // same thing with indexOf()
+// console.log(testResults.indexOf(10.99) !== -1);
+
+/* === Alternatives to for Loops: The forEach() method === */
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax = 0.19;
+const taxAdjustedPrices = [];
+
+// for (const price of prices) {
+//   taxAdjustedPrices.push(price * (1 + tax));
+// }
+
+prices.forEach((price, idx, prices) => {
+  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+  taxAdjustedPrices.push(priceObj);
+});
+/* 
+  forEach() => Array<number>.forEach(callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void
+
+  Performs the specified action for each element in an array.
+
+  @param callbackfn — A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array.
+
+  @param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
+*/
+console.log(taxAdjustedPrices);
