@@ -172,18 +172,18 @@
 // console.log(testResults.indexOf(10.99) !== -1);
 
 /* === Alternatives to for Loops: The forEach() method === */
-const prices = [10.99, 5.99, 3.99, 6.59];
-const tax = 0.19;
-const taxAdjustedPrices = [];
+// const prices = [10.99, 5.99, 3.99, 6.59];
+// const tax = 0.19;
+// const taxAdjustedPrices = [];
 
 // for (const price of prices) {
 //   taxAdjustedPrices.push(price * (1 + tax));
 // }
 
-prices.forEach((price, idx, prices) => {
-  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
-  taxAdjustedPrices.push(priceObj);
-});
+// prices.forEach((price, idx, prices) => {
+//   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+//   taxAdjustedPrices.push(priceObj);
+// });
 /* 
   forEach() => Array<number>.forEach(callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void
 
@@ -193,4 +193,22 @@ prices.forEach((price, idx, prices) => {
 
   @param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
 */
-console.log(taxAdjustedPrices);
+//console.log(taxAdjustedPrices);
+/* === Transforming Data with map() === */
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax = 0.19;
+
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
+  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+  return priceObj;
+});
+console.log(prices, taxAdjustedPrices);
+/* 
+  map() => Array<number>.map<void>(callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void[]
+
+  Calls a defined callback function on each element of an array, and returns an array that contains the results.
+
+  @param callbackfn — A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.
+
+  @param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
+*/
