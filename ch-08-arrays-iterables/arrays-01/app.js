@@ -195,14 +195,14 @@
 */
 //console.log(taxAdjustedPrices);
 /* === Transforming Data with map() === */
-const prices = [10.99, 5.99, 3.99, 6.59];
-const tax = 0.19;
+// const prices = [10.99, 5.99, 3.99, 6.59];
+// const tax = 0.19;
 
-const taxAdjustedPrices = prices.map((price, idx, prices) => {
-  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
-  return priceObj;
-});
-console.log(prices, taxAdjustedPrices);
+// const taxAdjustedPrices = prices.map((price, idx, prices) => {
+//   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+//   return priceObj;
+// });
+// console.log(prices, taxAdjustedPrices);
 /* 
   map() => Array<number>.map<void>(callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void[]
 
@@ -212,3 +212,24 @@ console.log(prices, taxAdjustedPrices);
 
   @param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
 */
+/* 
+  Exercise: map()
+ 
+  Your task is to add the missing logic to a transformToObjects() function that transforms a list of numbers into a list of JavaScript objects.
+
+  For the provided input [1, 2, 3] the transformToObjects() function should return [{val: 1}, {val: 2}, {val: 3}].
+*/
+
+function transformToObjects(numberArray) {
+  // Todo: Add your logic
+  // should return an array of objects
+
+  let newArray = numberArray.map((number) => {
+    let obj = { val: number };
+    return obj;
+  });
+
+  return newArray;
+}
+
+transformToObjects([1, 2, 3]);
