@@ -220,16 +220,47 @@
   For the provided input [1, 2, 3] the transformToObjects() function should return [{val: 1}, {val: 2}, {val: 3}].
 */
 
-function transformToObjects(numberArray) {
-  // Todo: Add your logic
-  // should return an array of objects
+// function transformToObjects(numberArray) {
+//   // Todo: Add your logic
+//   // should return an array of objects
 
-  let newArray = numberArray.map((number) => {
-    let obj = { val: number };
-    return obj;
-  });
+//   let newArray = numberArray.map((number) => {
+//     let obj = { val: number };
+//     return obj;
+//   });
 
-  return newArray;
-}
+//   return newArray;
+// }
 
-transformToObjects([1, 2, 3]);
+// transformToObjects([1, 2, 3]);
+
+/* === sort()ing and reverse()ing === */
+
+const prices = [10.99, 5.99, 3.99, 6.59];
+
+const sortedPrices = prices.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return -1;
+  }
+});
+console.log(sortedPrices);
+/* 
+  sort() => Array<number>.sort(compareFn?: ((a: number, b: number) => number) | undefined): number[]
+
+  Sorts an array in place. This method mutates the array and returns a reference to the same array.
+
+  @param compareFn
+  Function used to determine the order of the elements. It is expected to return a negative value if the first argument is less than the second argument, zero if they're equal, and a positive value otherwise. If omitted, the elements are sorted in ascending, ASCII character order.
+
+  [11,2,22,1].sort((a, b) => a - b)
+*/
+console.log(sortedPrices.reverse());
+/* 
+  reverse() => Array<number>.reverse(): number[]
+
+  Reverses the elements in an array in place. This method mutates the array and returns a reference to the same array.
+*/
