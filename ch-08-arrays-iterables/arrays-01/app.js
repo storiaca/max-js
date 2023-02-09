@@ -272,6 +272,9 @@ const filteredArray = prices.filter((price, index, prices) => {
   return price > 6;
 });
 
+// Shorter: Where Arrow Functions Shine!
+//const filteredArray = prices.filter(p => p > 6);
+
 console.log(filteredArray);
 
 /* 
