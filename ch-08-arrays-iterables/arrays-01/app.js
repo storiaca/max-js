@@ -236,18 +236,18 @@
 
 /* === sort()ing and reverse()ing === */
 
-const prices = [10.99, 5.99, 3.99, 6.59];
+// const prices = [10.99, 5.99, 3.99, 6.59];
 
-const sortedPrices = prices.sort((a, b) => {
-  if (a > b) {
-    return 1;
-  } else if (a === b) {
-    return 0;
-  } else {
-    return -1;
-  }
-});
-console.log(sortedPrices);
+// const sortedPrices = prices.sort((a, b) => {
+//   if (a > b) {
+//     return 1;
+//   } else if (a === b) {
+//     return 0;
+//   } else {
+//     return -1;
+//   }
+// });
+// console.log(sortedPrices);
 /* 
   sort() => Array<number>.sort(compareFn?: ((a: number, b: number) => number) | undefined): number[]
 
@@ -258,9 +258,28 @@ console.log(sortedPrices);
 
   [11,2,22,1].sort((a, b) => a - b)
 */
-console.log(sortedPrices.reverse());
+//console.log(sortedPrices.reverse());
 /* 
   reverse() => Array<number>.reverse(): number[]
 
   Reverses the elements in an array in place. This method mutates the array and returns a reference to the same array.
+*/
+
+/* === Filtering Arrays with filter() === */
+const prices = [10.99, 5.99, 3.99, 6.59];
+
+const filteredArray = prices.filter((price, index, prices) => {
+  return price > 6;
+});
+
+console.log(filteredArray);
+
+/* 
+  filter() => Array<number>.filter(predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any): number[] (+1 overload)
+
+  Returns the elements of an array that meet the condition specified in a callback function.
+
+  @param predicate — A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
+
+  @param thisArg — An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
 */
