@@ -266,16 +266,16 @@
 */
 
 /* === Filtering Arrays with filter() === */
-const prices = [10.99, 5.99, 3.99, 6.59];
+// const prices = [10.99, 5.99, 3.99, 6.59];
 
-const filteredArray = prices.filter((price, index, prices) => {
-  return price > 6;
-});
+// const filteredArray = prices.filter((price, index, prices) => {
+//   return price > 6;
+// });
 
 // Shorter: Where Arrow Functions Shine!
 //const filteredArray = prices.filter(p => p > 6);
 
-console.log(filteredArray);
+//console.log(filteredArray);
 
 /* 
   filter() => Array<number>.filter(predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any): number[] (+1 overload)
@@ -285,4 +285,34 @@ console.log(filteredArray);
   @param predicate — A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
 
   @param thisArg — An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
+*/
+
+/* === The Important reduce() Method === */
+const prices = [10.99, 5.99, 3.99, 6.59];
+
+// let sum = 0;
+
+// prices.forEach((price) => {
+//   sum += price;
+// });
+
+// console.log(sum);
+
+const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
+  return prevValue + curValue;
+}, 0);
+
+// shorter
+//const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+
+console.log(sum);
+
+/* 
+  reduce() => Array<number>.reduce(callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number (+2 overloads)
+
+  Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
+
+  @param callbackfn — A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array.
+
+  @param initialValue — If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.
 */
