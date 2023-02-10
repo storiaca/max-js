@@ -288,7 +288,7 @@
 */
 
 /* === The Important reduce() Method === */
-const prices = [10.99, 5.99, 3.99, 6.59];
+//const prices = [10.99, 5.99, 3.99, 6.59];
 
 // let sum = 0;
 
@@ -298,14 +298,14 @@ const prices = [10.99, 5.99, 3.99, 6.59];
 
 // console.log(sum);
 
-const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
-  return prevValue + curValue;
-}, 0);
+// const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
+//   return prevValue + curValue;
+// }, 0);
 
 // shorter
 //const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
 
-console.log(sum);
+// console.log(sum);
 
 /* 
   reduce() => Array<number>.reduce(callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number (+2 overloads)
@@ -316,3 +316,23 @@ console.log(sum);
 
   @param initialValue — If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.
 */
+/* === Arrays and strings - split() and join() === */
+const data = "new york;10.99;2000";
+
+const transformedData = data.split(";");
+transformedData[1] = +transformedData[1];
+
+console.log(transformedData);
+/* 
+  split() => String.split(separator: string | RegExp, limit?: number | undefined): string[] (+1 overload)
+
+  Split a string into substrings using the specified separator and return them as an array.
+
+  @param separator — A string that identifies character or characters to use in separating the string. If omitted, a single-element array containing the entire string is returned.
+
+  @param limit — A value used to limit the number of elements returned in the array.
+*/
+const nameFragments = ["Max", "Schwarz"];
+const nameJoin = nameFragments.join(" ");
+
+console.log(nameJoin);
