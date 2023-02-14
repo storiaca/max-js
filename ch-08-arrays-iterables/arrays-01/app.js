@@ -317,12 +317,12 @@
   @param initialValue — If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.
 */
 /* === Arrays and strings - split() and join() === */
-const data = "new york;10.99;2000";
+// const data = "new york;10.99;2000";
 
-const transformedData = data.split(";");
-transformedData[1] = +transformedData[1];
+// const transformedData = data.split(";");
+// transformedData[1] = +transformedData[1];
 
-console.log(transformedData);
+// console.log(transformedData);
 /* 
   split() => String.split(separator: string | RegExp, limit?: number | undefined): string[] (+1 overload)
 
@@ -332,7 +332,14 @@ console.log(transformedData);
 
   @param limit — A value used to limit the number of elements returned in the array.
 */
-const nameFragments = ["Max", "Schwarz"];
-const nameJoin = nameFragments.join(" ");
+// const nameFragments = ["Max", "Schwarz"];
+// const nameJoin = nameFragments.join(" ");
 
-console.log(nameJoin);
+// console.log(nameJoin);
+
+/* === The Spread Operator (...) === */
+const nameFragments = ["Max", "Schwarz"];
+
+const copiedNameFragments = [...nameFragments];
+
+console.log(copiedNameFragments);
