@@ -338,28 +338,37 @@
 // console.log(nameJoin);
 
 /* === The Spread Operator (...) === */
-const nameFragments = ["Max", "Schwarz"];
+// const nameFragments = ["Max", "Schwarz"];
 
-const copiedNameFragments = [...nameFragments];
+// const copiedNameFragments = [...nameFragments];
 
-nameFragments.push("Mr");
+// nameFragments.push("Mr");
 
-console.log(nameFragments, copiedNameFragments);
+// console.log(nameFragments, copiedNameFragments);
 
-const prices = [10.99, 5.99, 3.99, 6.59];
+// const prices = [10.99, 5.99, 3.99, 6.59];
 
-console.log(Math.min(...prices));
+// console.log(Math.min(...prices));
 
-const persons = [
-  { name: "Max", age: 30 },
-  { name: "Manuel", age: 31 },
-];
-const copiedPersons = persons.map((person) => ({
-  name: person.name,
-  age: person.age,
-}));
+// const persons = [
+//   { name: "Max", age: 30 },
+//   { name: "Manuel", age: 31 },
+// ];
+// const copiedPersons = persons.map((person) => ({
+//   name: person.name,
+//   age: person.age,
+// }));
 
-persons.push({ name: "Anna", age: 29 });
-persons[0].age = 31;
+// persons.push({ name: "Anna", age: 29 });
+// persons[0].age = 31;
 
-console.log(persons, copiedPersons);
+// console.log(persons, copiedPersons);
+
+/* === Understanding Array Destructuring === */
+const nameData = ["Max", "Schwarz", "Mr", 30];
+// const firstName = nameData[0];
+// const lastName = nameData[1];
+
+const [firstName, lastName, ...otherInformation] = nameData;
+
+console.log(firstName, lastName, otherInformation);
