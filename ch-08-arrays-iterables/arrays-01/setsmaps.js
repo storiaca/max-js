@@ -21,12 +21,12 @@ new <any>(iterable?: Iterable<any> | null | undefined) => Set<any> (+1 overload)
 */
 
 /* === Working with Maps === */
-const person1 = { name: "Max" };
-const person2 = { name: "Manuel" };
+// const person1 = { name: "Max" };
+// const person2 = { name: "Manuel" };
 
-const personData = new Map([[person1, [{ date: "yesterday", price: 10 }]]]);
+// const personData = new Map([[person1, [{ date: "yesterday", price: 10 }]]]);
 
-personData.set(person2, [{ date: "two weeks ago", price: 45 }]);
+// personData.set(person2, [{ date: "two weeks ago", price: 45 }]);
 /* 
   set()  Map<{ name: string; }, { date: string; price: number; }[]>.set(key: {
     name: string;
@@ -42,9 +42,9 @@ personData.set(person2, [{ date: "two weeks ago", price: 45 }]);
 
   Adds a new element with a specified key and value to the Map. If an element with the same key already exists, the element will be updated.
 */
-console.log(personData);
+// console.log(personData);
 
-console.log(personData.get(person1));
+// console.log(personData.get(person1));
 /* 
   get() Map<{ name: string; }, { date: string; price: number; }[]>.get(key: {
     name: string;
@@ -58,19 +58,34 @@ console.log(personData.get(person1));
   @returns — Returns the element associated with the specified key. If no element is associated with the specified key, undefined is returned.
 */
 
-// get values and keys
-for (const [key, value] of personData.entries()) {
-  console.log(key, value);
-}
+// // get values and keys
+// for (const [key, value] of personData.entries()) {
+//   console.log(key, value);
+// }
 
-// get only keys
-for (const key of personData.keys()) {
-  console.log(key);
-}
+// // get only keys
+// for (const key of personData.keys()) {
+//   console.log(key);
+// }
 
-// get only values
-for (const value of personData.values()) {
-  console.log(value);
-}
+// // get only values
+// for (const value of personData.values()) {
+//   console.log(value);
+// }
 
-console.log(personData.size);
+// console.log(personData.size);
+
+/* === Understanding WeakSet === */
+let person = { name: "Max" };
+const persons = new WeakSet();
+
+persons.add(person);
+
+// ... some operations
+person = null;
+
+console.log(persons);
+/* 
+  WeakSet() var WeakSet: WeakSetConstructor
+  new <object>(values?: readonly object[] | null | undefined) => WeakSet<object> (+1 overload)
+*/
