@@ -76,16 +76,29 @@ new <any>(iterable?: Iterable<any> | null | undefined) => Set<any> (+1 overload)
 // console.log(personData.size);
 
 /* === Understanding WeakSet === */
-let person = { name: "Max" };
-const persons = new WeakSet();
+// let person = { name: "Max" };
+// const persons = new WeakSet();
 
-persons.add(person);
+// persons.add(person);
 
-// ... some operations
-person = null;
+// // ... some operations
+// person = null;
 
-console.log(persons);
+// console.log(persons);
 /* 
   WeakSet() var WeakSet: WeakSetConstructor
   new <object>(values?: readonly object[] | null | undefined) => WeakSet<object> (+1 overload)
+*/
+/* === Understanding WeakMap === */
+let person = { name: "Max" };
+
+const personData = new WeakMap();
+personData.set(person, "Extra info!");
+
+person = null;
+
+console.log(personData);
+/* 
+  var WeakMap: WeakMapConstructor
+  new <object, any>(entries?: readonly [object, any][] | null | undefined) => WeakMap<object, any> (+1 overload)
 */
