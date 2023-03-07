@@ -29,6 +29,28 @@
 // console.log(person[userChosenKeyName]);
 
 // console.log(person);
+/* ==== The Object Spread Operator (...) ==== */
+const person = { name: "Max", hobbies: ["Sports", "Cooking"] };
+
+const anotherPerson = person;
+person.age = 30;
+
+console.log("anotherPerson", anotherPerson);
+
+const person2 = { ...person };
+
+person.age = 31;
+
+person.hobbies.push("Coding");
+
+console.log("person2", person2);
+
+const person3 = { ...person, age: 29, hobbies: [...person.hobbies] };
+
+person.hobbies.pop();
+
+console.log("person", person);
+console.log("person3", person3);
 
 /* ==== App Code ==== */
 const addMovieBtn = document.getElementById("add-movie-btn");
