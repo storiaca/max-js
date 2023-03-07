@@ -53,14 +53,14 @@
 // console.log("person3", person3);
 
 /* ====  Understanding Object.assign() ==== */
-const person = { name: "Max" };
+// const person = { name: "Max" };
 
-const person2 = Object.assign({}, person);
+// const person2 = Object.assign({}, person);
 
-person.name = "Maximilian";
+// person.name = "Maximilian";
 
-console.log("person", person);
-console.log("person2", person2);
+// console.log("person", person);
+// console.log("person2", person2);
 
 /* 
   (method) ObjectConstructor.assign(target: object, ...sources: any[]): any (+3 overloads)
@@ -95,11 +95,15 @@ const renderMovies = (filter = "") => {
 
   filteredMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
-    let text = movie.info.title + "-";
+    
+    const { info, ...otherProps } = movie;
+    console.log(otherProps);
+    const { title: movieTitle } = info;
+    let text = movieTitle + "-";
 
-    for (const key in movie.info) {
+    for (const key in info) {
       if (key !== "title") {
-        text = text + `${key}: ${movie.info[key]}`;
+        text = text + `${key}: ${info[key]}`;
       }
     }
     movieEl.textContent = text;
