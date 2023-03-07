@@ -30,27 +30,47 @@
 
 // console.log(person);
 /* ==== The Object Spread Operator (...) ==== */
-const person = { name: "Max", hobbies: ["Sports", "Cooking"] };
+// const person = { name: "Max", hobbies: ["Sports", "Cooking"] };
 
-const anotherPerson = person;
-person.age = 30;
+// const anotherPerson = person;
+// person.age = 30;
 
-console.log("anotherPerson", anotherPerson);
+// console.log("anotherPerson", anotherPerson);
 
-const person2 = { ...person };
+// const person2 = { ...person };
 
-person.age = 31;
+// person.age = 31;
 
-person.hobbies.push("Coding");
+// person.hobbies.push("Coding");
 
-console.log("person2", person2);
+// console.log("person2", person2);
 
-const person3 = { ...person, age: 29, hobbies: [...person.hobbies] };
+// const person3 = { ...person, age: 29, hobbies: [...person.hobbies] };
 
-person.hobbies.pop();
+// person.hobbies.pop();
+
+// console.log("person", person);
+// console.log("person3", person3);
+
+/* ====  Understanding Object.assign() ==== */
+const person = { name: "Max" };
+
+const person2 = Object.assign({}, person);
+
+person.name = "Maximilian";
 
 console.log("person", person);
-console.log("person3", person3);
+console.log("person2", person2);
+
+/* 
+  (method) ObjectConstructor.assign(target: object, ...sources: any[]): any (+3 overloads)
+
+  Copy the values of all of the enumerable own properties from one or more source objects to a target object. Returns the target object.
+
+  @param target — The target object to copy to.
+
+  @param sources — One or more source objects from which to copy properties
+*/
 
 /* ==== App Code ==== */
 const addMovieBtn = document.getElementById("add-movie-btn");
