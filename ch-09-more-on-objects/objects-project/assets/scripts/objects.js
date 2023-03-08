@@ -96,6 +96,9 @@ const renderMovies = (filter = "") => {
   filteredMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
     
+    // if('info' in movie) // check property in object
+    // if(!(movie.info === undefined)) // check property in object
+    
     const { info, ...otherProps } = movie;
     console.log(otherProps);
     const { title: movieTitle } = info;
