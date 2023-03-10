@@ -71,6 +71,31 @@
 
   @param sources — One or more source objects from which to copy properties
 */
+/* ==== "this" and Arrow Functions ==== */
+
+// const members = {
+//   teamName: "Blue Rockets",
+//   people: ["Max", "Manuel"],
+//   getTeamMembers() {
+//     this.people.forEach((p) => {
+//       console.log(p + " - " + this.teamName);
+//     });
+//   },
+// };
+
+const members = {
+  teamName: "Blue Rockets",
+  people: ["Max", "Manuel"],
+  getTeamMembers() {
+    this.people.forEach(function (p) {
+      console.log(this);
+      console.log(p + " - " + this.teamName); // this.teamName => undefined
+    });
+  },
+};
+
+console.log(members.getTeamMembers());
+
 
 /* ==== App Code ==== */
 const addMovieBtn = document.getElementById("add-movie-btn");
