@@ -8,4 +8,6 @@ Attached, you find the source code for this section. The snapshots are also atta
 
 The following resources may be helpful.
 
-    More on the this keyword (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+    More on the this keyword (MDN): 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+    
