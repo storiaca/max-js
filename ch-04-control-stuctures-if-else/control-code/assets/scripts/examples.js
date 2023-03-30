@@ -26,3 +26,38 @@ const hobbies = ["Sports", "Cooking"];
 const moreHobbies = ["Sports", "Cooking"];
 
 hobbies === moreHobbies; // false
+
+/* === Logical Operator "Tricks" & Shorthands === */
+const userInput = "";
+
+//const isValidInput = userInput ? true : false;
+// isto kao ovo gore samo krace:
+const isValidInput = !!userInput;
+
+console.log(isValidInput); // false
+
+const userName = userInput || "Max";
+
+console.log(userName); // Max
+
+const realUserInput = "Manu";
+
+const realUserName = realUserInput || "Aleksandar";
+
+console.log(realUserName); // Manu
+
+let isLoggedIn = true;
+
+isLoggedIn && ""; // ""
+
+const shoppingCart = isLoggedIn && ["Books"];
+
+console.log(shoppingCart); // ["Books"]
+
+isLoggedIn = false;
+
+const cart = isLoggedIn && ["Books"];
+
+console.log(cart); // false
+
+null && ["Books"]; // null
