@@ -61,3 +61,17 @@ const cart = isLoggedIn && ["Books"];
 console.log(cart); // false
 
 null && ["Books"]; // null
+
+/* === The "while" & "do-while" Loops === */
+let randomNumbers = [];
+
+let finished = false;
+
+while (!finished) {
+  const rndNumber = Math.random();
+  randomNumbers.push(rndNumber);
+  if (rndNumber > 0.5) {
+    finished = true;
+    console.log(randomNumbers);
+  }
+}
