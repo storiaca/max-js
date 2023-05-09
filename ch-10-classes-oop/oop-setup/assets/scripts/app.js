@@ -3,27 +3,29 @@ class Product {
   imageUrl;
   description;
   price;
-}
 
-console.log(new Product());
+  constructor(title, image, desc, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+  }
+}
 
 const productList = {
   products: [
-    //new Product()
-    {
-      title: "A Pillow",
-      imageUrl:
-        "http://dl.maxpixel.freegreatpicture.com/?f=antelope-7951562_1920.jpg&type=View&token=97fd2632754a790ce281d40d23c053e9&pid=7951562",
-      price: 19.99,
-      description: "A soft pillow!",
-    },
-    {
-      title: "A Carpet",
-      imageUrl:
-        "http://dl.maxpixel.freegreatpicture.com/?f=bald-eagle-3955951_1920.jpg&type=View&token=355c9f4b606fd34877ce0ebdee5bde5b&pid=3955951",
-      price: 89.99,
-      description: "A carpet which you might like - or not.",
-    },
+    new Product(
+      "A Pillow",
+      "https://www.maxpixel.net/static/photo/2x/Soft-Pillow-Green-Decoration-Deco-Snuggle-1241878.jpg",
+      "A soft pillow!",
+      19.99
+    ),
+    new Product(
+      "A Carpet",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ardabil_Carpet.jpg/397px-Ardabil_Carpet.jpg",
+      "A carpet which you might like - or not.",
+      89.99
+    ),
   ],
   render() {
     const renderHook = document.getElementById("app");
