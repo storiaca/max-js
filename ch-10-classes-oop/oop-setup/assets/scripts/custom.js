@@ -93,3 +93,5 @@ Object.defineProperty(person, "greet", {
   enumerable: false,
   configurable: true,
 });
+
+// onda se vise metoda nece prikazivati u for in loop-u
