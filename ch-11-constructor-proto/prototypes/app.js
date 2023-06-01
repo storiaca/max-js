@@ -57,4 +57,4 @@ const p2 = new p.__proto__.constructor();
 console.log(p2);
 console.log(p.__proto__ === Person.prototype); // true
 
-console.dir(Object);
+console.dir(Object.prototype); // ovo je fallback objekat za sve objekte i tu se zavrsava prototype lanac
