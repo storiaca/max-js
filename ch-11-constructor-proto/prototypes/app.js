@@ -66,14 +66,59 @@ class Person {
 
 // console.dir(Object.prototype); // ovo je fallback objekat za sve objekte i tu se zavrsava prototype lanac
 
-const p = new Person();
-const p2 = new Person();
+// const p = new Person();
+// const p2 = new Person();
 
-p.greet();
-console.log(p);
+// p.greet();
+// console.log(p);
 
-const button = document.getElementById("btn");
-button.addEventListener("click", p.greet.bind(p));
+// const button = document.getElementById("btn");
+// button.addEventListener("click", p.greet.bind(p));
 
-console.log(p, p2);
-console.log(p.__proto__ === p2.__proto__); // true
+// console.log(p, p2);
+// console.log(p.__proto__ === p2.__proto__); // true
+
+const course = {
+  title: "Javascript - The Complete Guide",
+  rating: 5,
+}; // new Object()
+
+//console.log(Object.getPrototypeOf(course));
+
+Object.setPrototypeOf(course, {
+  // ...Object.getPrototypeOf(course),
+  printRating: function () {
+    console.log(`${this.rating}/5`);
+  },
+});
+
+course.printRating();
+
+const student = Object.create(
+  {
+    printProgress: function () {
+      console.log(this.progress);
+    },
+  },
+  {
+    name: {
+      configurable: true,
+      enumerable: true,
+      value: "Max",
+      writable: true,
+    },
+  }
+);
+
+// student.name = "Max";
+
+Object.defineProperty(student, "progress", {
+  configurable: true,
+  enumerable: true,
+  value: 0.8,
+  writable: false,
+});
+
+student.printProgress();
+
+console.log(student);
