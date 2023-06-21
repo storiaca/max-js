@@ -16,6 +16,6 @@ console.log(example.scrollTop); // 0 depends of how much we scrolled
 console.log(window.innerWidth);
 console.log(window.innerHeight);
 
-// better way to find hwight and width of window
+// better way to find height and width of window
 console.log(document.documentElement.clientWidth);
 console.log(document.documentElement.clientHeight);
