@@ -54,7 +54,10 @@ class Tooltip extends Component {
   create() {
     const tooltipElement = document.createElement("div");
     tooltipElement.className = "card";
-    tooltipElement.textContent = this.text;
+    const tooltipTemplate = document.getElementById("tooltip");
+    const tooltipBody = document.importNode(tooltipTemplate.content, true);
+    tooltipBody.querySelector("p").textContent = this.text;
+    tooltipElement.append(tooltipBody);
 
     const hostElPosLeft = this.hostElement.offsetLeft;
     const hostElPosTop = this.hostElement.offsetTop;
@@ -174,11 +177,11 @@ class App {
 App.init();
 
 /* Handling scrolling */
-const ul = document.querySelector("section ul");
+//const ul = document.querySelector("section ul");
 
 //console.log(ul.scrollTo(0, 50)); // add amount of hom much want to scroll by x or y axe, this case scroll 50px by y axe
 
 //console.log(ul.scrollBy(0, 50)); // this will add that number that we defined
 
-console.log(ul.scrollTo({ top: 50, behavior: "smooth" }));
-console.log(ul.scrollBy({ top: 50, behavior: "smooth" }));
+//console.log(ul.scrollTo({ top: 50, behavior: "smooth" }));
+//console.log(ul.scrollBy({ top: 50, behavior: "smooth" }));
