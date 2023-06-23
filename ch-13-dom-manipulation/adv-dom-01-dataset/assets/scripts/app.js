@@ -9,6 +9,7 @@ class DOMHelper {
     const element = document.getElementById(elementId);
     const destinationElement = document.querySelector(newDestinationSelector);
     destinationElement.append(element);
+    element.scrollIntoView({ behavior: "smooth" });
   }
 }
 
@@ -171,3 +172,13 @@ class App {
 }
 
 App.init();
+
+/* Handling scrolling */
+const ul = document.querySelector("section ul");
+
+//console.log(ul.scrollTo(0, 50)); // add amount of hom much want to scroll by x or y axe, this case scroll 50px by y axe
+
+//console.log(ul.scrollBy(0, 50)); // this will add that number that we defined
+
+console.log(ul.scrollTo({ top: 50, behavior: "smooth" }));
+console.log(ul.scrollBy({ top: 50, behavior: "smooth" }));
