@@ -210,3 +210,29 @@ App.init();
 
 //console.log(ul.scrollTo({ top: 50, behavior: "smooth" }));
 //console.log(ul.scrollBy({ top: 50, behavior: "smooth" }));
+
+/* The "location" and "history" Objects */
+
+console.log(location);
+
+//console.log((location.href = "https://academind.com")); // send user to new location
+
+//console.log(location.replace("https://academind.com")); // same as href but we can't go back
+
+//console.log(location.assign("https://academind.com")); // same as href, just call method
+
+console.log(location.host); // tels on which host this running
+
+console.log(location.origin); // full domain
+
+console.log(location.pathname); // shows where you are on the page
+
+console.log(history);
+
+//console.log(history.back()); // back to the page where we came from
+
+// console.log(history.forward);
+
+console.log(history.length); // how manu steps user did in this tab browser
+
+// console.log(history.go(5)); // go back 5 steps in history
