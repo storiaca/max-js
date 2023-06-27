@@ -213,7 +213,7 @@ App.init();
 
 /* The "location" and "history" Objects */
 
-console.log(location);
+// console.log(location);
 
 //console.log((location.href = "https://academind.com")); // send user to new location
 
@@ -221,18 +221,32 @@ console.log(location);
 
 //console.log(location.assign("https://academind.com")); // same as href, just call method
 
-console.log(location.host); // tels on which host this running
+//console.log(location.host); // tels on which host this running
 
-console.log(location.origin); // full domain
+//console.log(location.origin); // full domain
 
-console.log(location.pathname); // shows where you are on the page
+//console.log(location.pathname); // shows where you are on the page
 
-console.log(history);
+//console.log(history);
 
 //console.log(history.back()); // back to the page where we came from
 
 // console.log(history.forward);
 
-console.log(history.length); // how manu steps user did in this tab browser
+//console.log(history.length); // how manu steps user did in this tab browser
 
 // console.log(history.go(5)); // go back 5 steps in history
+
+/* The "navigator" Object */
+console.log(navigator);
+
+console.log(navigator.userAgent); // userAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+// ovo nije sigurno, ako zelimo da proverimo koji browser koristi user, mozemo da proverimo fature od tog browsera
+
+console.log(navigator.clipboard);
+
+console.log(
+  navigator.geolocation.getCurrentPosition((data) => {
+    console.log(data);
+  })
+); // GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1687847322663}
