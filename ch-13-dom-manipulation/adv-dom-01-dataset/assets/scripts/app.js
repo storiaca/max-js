@@ -268,7 +268,7 @@ App.init();
 // console.log(date - date2); // 1178365781
 // console.log(1178365781 / 1000 / 60 / 60 / 24); // 13.6 get number of days between two dates
 
-/* The "Error" Object & Constructor Function */
+/* The 'Error' Object & Constructor Function */
 //throw new Error("Something went wrong");
 
 const customError = new Error("Custom error");
