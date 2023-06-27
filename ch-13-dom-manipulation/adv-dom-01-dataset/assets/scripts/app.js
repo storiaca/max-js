@@ -238,15 +238,32 @@ App.init();
 // console.log(history.go(5)); // go back 5 steps in history
 
 /* The "navigator" Object */
-console.log(navigator);
+//console.log(navigator);
 
-console.log(navigator.userAgent); // userAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+//console.log(navigator.userAgent); // userAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
 // ovo nije sigurno, ako zelimo da proverimo koji browser koristi user, mozemo da proverimo fature od tog browsera
 
-console.log(navigator.clipboard);
+// console.log(navigator.clipboard);
 
-console.log(
-  navigator.geolocation.getCurrentPosition((data) => {
-    console.log(data);
-  })
-); // GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1687847322663}
+// console.log(
+//   navigator.geolocation.getCurrentPosition((data) => {
+//     console.log(data);
+//   })
+// ); // GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1687847322663}
+
+/* Working with Dates */
+console.log(new Date());
+
+const date = new Date();
+
+console.log(date.getDate()); // 27 date in month
+console.log(date.getDay()); // 2 day in week
+
+console.log(date.getTime()); // 1687847798553 time since begining of time in ms for js 01.01.1970.
+
+const date2 = new Date("07/11/23");
+
+console.log(date2);
+
+console.log(date - date2); // 1178365781
+console.log(1178365781 / 1000 / 60 / 60 / 24);
