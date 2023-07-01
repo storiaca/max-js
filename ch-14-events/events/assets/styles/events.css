@@ -3,7 +3,7 @@ body {
   font-family: sans-serif;
 }
 
-div {
+.button-box {
   border: 1px solid #ccc;
   padding: 1.5rem 3rem;
 }
@@ -34,4 +34,8 @@ button:active {
   background: #e92f6d;
   border-color: #e92f6d;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+}
+
+#long-one {
+  height: 3000px;
 }

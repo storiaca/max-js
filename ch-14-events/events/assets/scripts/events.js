@@ -5,7 +5,7 @@ const buttons = document.querySelectorAll("button");
 // };
 
 const buttonClickHandler = (event) => {
-  event.target.disabled = true;
+  //event.target.disabled = true;
   console.log(event);
 };
 
@@ -30,5 +30,9 @@ const anotherButtonClickHandler = () => {
 // }, 2000);
 
 buttons.forEach((button) => {
-  button.addEventListener("click", buttonClickHandler);
+  button.addEventListener("mouseenter", buttonClickHandler);
+});
+
+window.addEventListener("scroll", (event) => {
+  console.log(event);
 });
