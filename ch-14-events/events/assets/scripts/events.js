@@ -52,10 +52,11 @@ div.addEventListener("click", (event) => {
   console.log(event);
 });
 
-button.addEventListener("click", (event) => {
+button.addEventListener("click", function (event) {
   event.stopPropagation();
   console.log("Clicked Button");
   console.log(event);
+  console.log(this);
 });
 
 const listItems = document.querySelectorAll("li");
@@ -76,10 +77,11 @@ const list = document.querySelector("ul");
 //   myClosestLi.classList.toggle("highlight");
 // });
 
-list.addEventListener("click", (event) => {
+list.addEventListener("click", function (event) {
   // console.log(event.currentTarget);
   // event.target.classList.toggle("highlight");
   event.target.closest("li").classList.toggle("highlight");
   //form.submit();
   button.click();
+  console.log(this);
 });
