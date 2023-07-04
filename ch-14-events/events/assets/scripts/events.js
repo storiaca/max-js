@@ -57,3 +57,21 @@ button.addEventListener("click", (event) => {
   console.log("Clicked Button");
   console.log(event);
 });
+
+const listItems = document.querySelectorAll("li");
+const list = document.querySelector("ul");
+
+// listItems.forEach((item) => {
+//   item.addEventListener("click", (event) => {
+//     event.target.classList.toggle("highlight");
+//   });
+// });
+
+list.addEventListener("click", (event) => {
+  if (!event.target.closest("li")) {
+    console.log("return");
+    return;
+  }
+  const myClosestLi = event.target.closest("li");
+  myClosestLi.classList.toggle("highlight");
+});
