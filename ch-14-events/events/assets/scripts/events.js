@@ -67,11 +67,17 @@ const list = document.querySelector("ul");
 //   });
 // });
 
+// list.addEventListener("click", (event) => {
+//   if (!event.target.closest("li")) {
+//     console.log("return");
+//     return;
+//   }
+//   const myClosestLi = event.target.closest("li");
+//   myClosestLi.classList.toggle("highlight");
+// });
+
 list.addEventListener("click", (event) => {
-  if (!event.target.closest("li")) {
-    console.log("return");
-    return;
-  }
-  const myClosestLi = event.target.closest("li");
-  myClosestLi.classList.toggle("highlight");
+  // console.log(event.currentTarget);
+  // event.target.classList.toggle("highlight");
+  event.target.closest("li").classList.toggle("highlight");
 });
