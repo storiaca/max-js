@@ -172,11 +172,15 @@ class ProjectList {
     });
 
     list.addEventListener("dragleave", (event) => {
-      if (event.relatedTarget.closest(`#${this.type}-projects ul`) !== list) {
+      if (
+        event.relatedTarget.closest &&
+        event.relatedTarget.closest(`#${this.type}-projects ul`) !== list
+      ) {
         list.parentElement.classList.remove("droppable");
       }
     });
     list.addEventListener("drop", (event) => {
+      event.preventDefault(); // for firefox
       const prjId = event.dataTransfer.getData("text/plain");
       if (this.projects.find((p) => p.id === prjId)) {
         return;
