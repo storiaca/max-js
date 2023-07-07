@@ -45,3 +45,4 @@ const calculateIncomeTaxAmount = createTaxCalculator(0.25);
 console.log("vat amount", calculateVatAmount(100));
 console.log("vat amount", calculateVatAmount(200));
 console.log("income amount", calculateIncomeTaxAmount(200));
+// ovo je: Note: P.L.S.R.D: Persistent Lexical Scope Referenced DataNote: P.L.S.R.D: Persistent Lexical Scope Referenced Data
