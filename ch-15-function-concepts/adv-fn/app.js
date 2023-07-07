@@ -29,3 +29,19 @@ function printHobbies(h) {
 }
 
 printHobbies(hobbies);
+
+/* Factory Functions */
+
+function createTaxCalculator(tax) {
+  function calculateTax(amount) {
+    return amount * tax;
+  }
+  return calculateTax;
+}
+
+const calculateVatAmount = createTaxCalculator(0.19);
+const calculateIncomeTaxAmount = createTaxCalculator(0.25);
+
+console.log("vat amount", calculateVatAmount(100));
+console.log("vat amount", calculateVatAmount(200));
+console.log("income amount", calculateIncomeTaxAmount(200));
