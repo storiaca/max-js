@@ -57,7 +57,7 @@ let userName = "Max";
 
 function greetUser() {
   let name = "Anna";
-  console.log("Hi " + name);
+  console.log("Hi " + name); // Hi Anna
 }
 
 let name = "Maximilian";
