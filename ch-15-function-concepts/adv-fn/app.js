@@ -45,9 +45,22 @@ function createTaxCalculator(tax) {
 const calculateVatAmount = createTaxCalculator(0.19);
 const calculateIncomeTaxAmount = createTaxCalculator(0.25);
 
-multiplier = 1.2;
+//multiplier = 1.2;
 
 console.log("vat amount", calculateVatAmount(100));
 console.log("vat amount", calculateVatAmount(200));
 console.log("income amount", calculateIncomeTaxAmount(200));
 // ovo je: Note: P.L.S.R.D: Persistent Lexical Scope Referenced DataNote: P.L.S.R.D: Persistent Lexical Scope Referenced Data
+
+/* Closures in Practice */
+let userName = "Max";
+
+function greetUser() {
+  let name = "Anna";
+  console.log("Hi " + name);
+}
+
+let name = "Maximilian";
+userName = "Manuel";
+
+console.log(greetUser());
