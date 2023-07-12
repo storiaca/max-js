@@ -64,3 +64,16 @@ let name = "Maximilian";
 userName = "Manuel";
 
 console.log(greetUser());
+
+/* Introducing "Recursion" */
+function powerOf(x, n) {
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+console.log(powerOf(2, 3)); // 2 * 2 * 2
