@@ -66,14 +66,24 @@ userName = "Manuel";
 console.log(greetUser());
 
 /* Introducing "Recursion" */
+
+// function powerOf(x, n) {
+//   let result = 1;
+
+//   for (let i = 0; i < n; i++) {
+//     result *= x;
+//   }
+
+//   return result;
+// }
+
 function powerOf(x, n) {
-  let result = 1;
+  // if (n === 1) {
+  //   return x;
+  // }
+  // return x * powerOf(x, n - 1);
 
-  for (let i = 0; i < n; i++) {
-    result *= x;
-  }
-
-  return result;
+  return n === 1 ? x : x * powerOf(x, n - 1);
 }
 
 console.log(powerOf(2, 3)); // 2 * 2 * 2
