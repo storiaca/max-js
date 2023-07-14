@@ -45,5 +45,5 @@ console.log((0.2).toFixed(20)); // 0.20000000000000001110
 // resenje za ono na pocetku 0.2 + 0.4
 console.log((0.2 + 0.4).toFixed(1)); // daje 0.6 ali kad se uradi === vraca false, ovo je cisto da se prikaze rezultat korisniku
 
-// da bi dobili tacnu preciznost, sve nase brojeve mnozimo sa 100, kao za shop sto sve vrendosti pretvaramo u cente i pa mnozimo sa 100 i onda vracamo u decimalne vrednosti
+// da bi dobili tacnu preciznost, sve nase brojeve mnozimo sa 100 tako radimo sa integer, kao za shop sto sve vrendosti pretvaramo u cente i pa mnozimo sa 100 i onda vracamo u decimalne vrednosti
 console.log(20.2 * 100); // 2020
