@@ -74,3 +74,12 @@ console.log(Number.isFinite(Infinity)); // false
 
 // takodje zanimljiv objekat je Math, koji takodje ima dosta propertija, Math.E, Math.PI, Math.sqrt sve vezano za matematicke operacije
 console.log(Math.PI); // 3.141592653589793
+
+/* Example: Generate Random Number Between Min/ Max */
+
+function randomIntBetween(min, max) {
+  // min: 5, max: 10
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+console.log(randomIntBetween(5, 10));
