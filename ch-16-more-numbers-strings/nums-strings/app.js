@@ -47,3 +47,18 @@ console.log((0.2 + 0.4).toFixed(1)); // daje 0.6 ali kad se uradi === vraca fals
 
 // da bi dobili tacnu preciznost, sve nase brojeve mnozimo sa 100 tako radimo sa integer, kao za shop sto sve vrendosti pretvaramo u cente i pa mnozimo sa 100 i onda vracamo u decimalne vrednosti
 console.log(20.2 * 100); // 2020
+
+/* The BigInt Type */
+
+// sluzi da bi mogli da prikazemo brojeve iznad Number.MAX_SAFE_INTEGER
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
+// kreiramo BigInt tako sto dodamo n na kraju broja:
+console.log(90071992547409916769n);
+
+// ovo se interno ne gkeda kao 64-obitni broj kako js tretira brojeve, veca kao string
+
+// moze da bude i negativan broj, samo nemamo floating tacku za ove brojeve nema .nesto, 90071992547409916769.435n
+
+// mozemo da ih koristimo ovako:
+console.log(10n - 4n);
+// ali ne mozemo da pisemo 10n - 4, nema mesanja obicnih i BigInt brojeva
