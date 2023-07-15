@@ -62,3 +62,15 @@ console.log(90071992547409916769n);
 // mozemo da ih koristimo ovako:
 console.log(10n - 4n);
 // ali ne mozemo da pisemo 10n - 4, nema mesanja obicnih i BigInt brojeva
+
+/* The Global "Number" and "Math" Objects */
+
+// imamo Number objekat na kome imamo dosta propertija,jedan od njih je Infinity
+// imamo Infinity i -Infinity tipove, to je kad delimo sa 0, 1/0,
+
+// takodje mozemo da proverimo da li je true ili false sa isFinite metodom
+console.log(Number.isFinite(10)); // true
+console.log(Number.isFinite(Infinity)); // false
+
+// takodje zanimljiv objekat je Math, koji takodje ima dosta propertija, Math.E, Math.PI, Math.sqrt sve vezano za matematicke operacije
+console.log(Math.PI); // 3.141592653589793
