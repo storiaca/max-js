@@ -83,3 +83,11 @@ function randomIntBetween(min, max) {
 }
 
 console.log(randomIntBetween(5, 10));
+
+/* Exploring String Methods */
+
+// mozemo da kreiramo string ovako "" ili `${1}`
+
+// string ima odredjeni property kad se kreira kao objekat
+console.log("hello".toUpperCase());
+console.log("hello".startsWith("he")); // true
