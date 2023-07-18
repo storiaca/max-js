@@ -91,3 +91,29 @@ console.log(randomIntBetween(5, 10));
 // string ima odredjeni property kad se kreira kao objekat
 console.log("hello".toUpperCase());
 console.log("hello".startsWith("he")); // true
+
+/* Tagged Templates */
+const nameString = "Max";
+console.log(`My name is ${nameString}`);
+
+// mozemo da kreiramo tagged template, to je funkcija koja radi sa template literalom
+function productDescription(strings, productName, productPrice) {
+  console.log(strings);
+  console.log(productName);
+  console.log(productPrice);
+  let priceCategory = "pretty cheap";
+  if (productPrice > 20) {
+    priceCategory = "fairly priced";
+  }
+
+  return `${strings[0]}${productName}${strings[1]}${priceCategory}${strings[2]}`;
+
+  //return { name: productName, price: productPrice };
+}
+
+const prodName = "JavaScript Course";
+const prodPrice = 29.99;
+
+const productOutput = productDescription`This product (${prodName}) is ${prodPrice}.`;
+
+console.log(productOutput);
