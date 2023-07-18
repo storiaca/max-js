@@ -117,3 +117,19 @@ const prodPrice = 29.99;
 const productOutput = productDescription`This product (${prodName}) is ${prodPrice}.`;
 
 console.log(productOutput);
+
+/* Introducing Regular Expressions ("RegEx") */
+
+const userInput = "testtest.com";
+
+console.log(userInput.includes("@")); // false
+
+// ovo nece biti dovoljno jer treba jos nesto da se proveri, zato koristimo regex
+// dva nacina za kreiranje. prvi: const regex = new RegExp()
+
+// drugi: za email
+const regex = /^\S+@\S+\.\S+$/;
+
+console.log(regex.test(userInput)); // false
+
+console.log(regex.test("test@test.com")); // true
