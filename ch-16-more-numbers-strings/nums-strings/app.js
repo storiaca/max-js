@@ -128,8 +128,43 @@ console.log(userInput.includes("@")); // false
 // dva nacina za kreiranje. prvi: const regex = new RegExp()
 
 // drugi: za email
-const regex = /^\S+@\S+\.\S+$/;
+const regexEmail = /^\S+@\S+\.\S+$/;
 
-console.log(regex.test(userInput)); // false
+console.log(regexEmail.test(userInput)); // false
 
-console.log(regex.test("test@test.com")); // true
+console.log(regexEmail.test("test@test.com")); // true
+
+/* More on Regular Expressions */
+const regex = /hello/;
+
+console.log(regex.test("hello")); // true
+console.log(regex.test("hi there, hello")); // true
+console.log(regex.test("hi there, hello ...")); // true
+
+console.log(regex.test("Hello")); // false
+
+// ako uradimo ovako:
+const regex2 = /(h|H)ello/;
+console.log(regex2.test("hello")); // true
+console.log(regex2.test("hi - Hello")); // true
+
+// wildcards
+const regexw = /.ello/;
+
+console.log(regexw.test("ello")); // false
+console.log(regexw.test("hello")); // true
+console.log(regexw.test("Jello")); // true
+console.log(regexw.test("   Jello")); // true
+
+// escape with \
+
+// /^\S+@\S+\.\S+$/; ovo \. znaci izbegenm tacku ili S u izrazu
+
+// exec method
+
+console.log(regexw.exec("jello")); // ['jello', index: 0, input: 'jello', groups: undefined]
+
+// exec vraca niz, vidimo odakle pocinje regex, u ovom slucaju je na pocetku, index: 0
+
+// match method
+console.log("hi jello".match(regexw)); // ['jello', index: 3, input: 'hi jello', groups: undefined]
