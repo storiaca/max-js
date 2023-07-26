@@ -26,31 +26,29 @@ const setTimer = (duration) => {
   return promise;
 };
 
-function trackUserHandler() {
-  let positonData;
-  getPosition()
-    .then((posData) => {
-      positonData = posData;
-      return setTimer(2000);
-    })
-    .catch((err) => {
-      console.log(err);
-      return "on we go...";
-      // ovaj catch hvata sve then funckije pre njega i onda se nastavlja izvsavanje ako ima the posle njega
-    })
-    .then((data) => {
-      console.log(data, positonData);
-    })
-    .catch((err) => {
-      console.log(err);
-      // ovaj hvata sve zato sto je na kraju
-    });
+async function trackUserHandler() {
+  //let positonData;
+  const posData = await getPosition();
+  const timerData = await setTimer(2000);
+  console.log(timerData, posData);
+  // .then((posData) => {
+  //   positonData = posData;
+  //   return setTimer(2000);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  //   return "on we go...";
+  //   // ovaj catch hvata sve then funckije pre njega i onda se nastavlja izvsavanje ako ima the posle njega
+  // })
+  // .then((data) => {
+  //   console.log(data, positonData);
+  // })
 
-  setTimer(1000).then(() => {
-    console.log("Timer Done!");
-  });
+  // setTimer(1000).then(() => {
+  //   console.log("Timer Done!");
+  // });
 
-  console.log("Getting position...");
+  // console.log("Getting position...");
 }
 
 button.addEventListener("click", trackUserHandler);
