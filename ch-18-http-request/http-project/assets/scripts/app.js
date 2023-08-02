@@ -76,6 +76,9 @@ form.addEventListener("submit", (event) => {
 postList.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
     const postId = event.target.closest("li").id;
-    console.log(postId);
+    sendHttpRequest(
+      "DELETE",
+      `https://jsonplaceholder.typicode.com/posts/${postId}`
+    );
   }
 });
