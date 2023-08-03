@@ -4,7 +4,7 @@ const form = document.querySelector("#new-post form");
 const fetchButton = document.querySelector("#available-posts button");
 const postList = document.querySelector("ul");
 
-function sendHttpRequest(method, url, data) {
+function sendHttpRequest(method = "GET", url, data) {
   //const promise = new Promise((resolve, reject) => {
   //   const xhr = new XMLHttpRequest();
   //   xhr.open(method, url);
@@ -23,7 +23,10 @@ function sendHttpRequest(method, url, data) {
   //   xhr.send(JSON.stringify(data));
   // });
   // return promise;
-  return fetch(url).then((response) => {
+  return fetch(url, {
+    method: method,
+    body: JSON.stringify(data),
+  }).then((response) => {
     // response.text()
     // response.blob() // for downloading a file
     return response.json();
