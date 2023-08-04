@@ -30,11 +30,23 @@ function sendHttpRequest(method = "GET", url, data) {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((response) => {
-    // response.text()
-    // response.blob() // for downloading a file
-    return response.json();
-  });
+  })
+    .then((response) => {
+      // response.text()
+      // response.blob() // for downloading a file
+      if (response.status >= 200 && response.status < 300) {
+        return response.json();
+      } else {
+        return response.json().then((errData) => {
+          console.log(errData);
+          throw new Error("Someting went wrong - server-side.");
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      throw new Error("Something went wrong!");
+    });
 }
 
 // function fetchPosts() {
