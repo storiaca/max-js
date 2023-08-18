@@ -2,6 +2,7 @@ import { DOMHelper } from "../Utility/DOMHelper.js";
 
 //import { Tooltip } from "./Tooltip.js";
 
+console.log("Project item created!");
 export class ProjectItem {
   hasActiveTooltip = false;
 
