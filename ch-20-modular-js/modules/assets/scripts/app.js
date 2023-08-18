@@ -1,5 +1,8 @@
 import { ProjectList } from "./App/ProjectList.js";
 
+globalThis.DEFAULT_VALUE = "MAX";
+// globalThis menja this u modulima, radi i u node.js-u
+
 class App {
   static init() {
     const activeProjectsList = new ProjectList("active");
