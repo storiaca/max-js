@@ -11,5 +11,8 @@
     "javascript"
   ],
   "author": "Aleksandar Ristic",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.47.0"
+  }
 }
