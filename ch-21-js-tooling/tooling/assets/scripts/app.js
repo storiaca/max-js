@@ -1,16 +1,17 @@
-import { ProjectList } from "./App/ProjectList.js";
+// eslint-disable-next-line import/extensions
+import { ProjectList } from './App/ProjectList.js';
 
-globalThis.DEFAULT_VALUE = "MAX";
+globalThis.DEFAULT_VALUE = 'MAX';
 
 class App {
   static init() {
-    const activeProjectsList = new ProjectList("active");
-    const finishedProjectsList = new ProjectList("finished");
+    const activeProjectsList = new ProjectList('active');
+    const finishedProjectsList = new ProjectList('finished');
     activeProjectsList.setSwitchHandlerFunction(
-      finishedProjectsList.addProject.bind(finishedProjectsList)
+      finishedProjectsList.addProject.bind(finishedProjectsList),
     );
     finishedProjectsList.setSwitchHandlerFunction(
-      activeProjectsList.addProject.bind(activeProjectsList)
+      activeProjectsList.addProject.bind(activeProjectsList),
     );
 
     // const timerId = setTimeout(this.startAnalytics, 3000);
@@ -21,8 +22,8 @@ class App {
   }
 
   static startAnalytics() {
-    const analyticsScript = document.createElement("script");
-    analyticsScript.src = "assets/scripts/Utility/Analytics.js";
+    const analyticsScript = document.createElement('script');
+    analyticsScript.src = 'assets/scripts/Utility/Analytics.js';
     analyticsScript.defer = true;
     document.head.append(analyticsScript);
   }
