@@ -6,14 +6,13 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'assets', 'scripts'),
-    publicPath: 'assets/scripts',
+    // publicPath: 'assets/scripts',
   },
-  // devServer: {
-  //   contentBase: './',
-  // },
-  // devServer: {
-  //   static: {
-  //       directory: path.join(__dirname),
-  //   },
-  // },
+  devServer: {
+    static: {
+      directory: path.join(__dirname),
+    },
+    compress: true,
+    port: 8080,
+  },
 };
