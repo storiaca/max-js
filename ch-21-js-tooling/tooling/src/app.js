@@ -1,7 +1,10 @@
 // eslint-disable-next-line import/extensions
 import { ProjectList } from './App/ProjectList.js';
+import * as _ from 'lodash/array';
 
 globalThis.DEFAULT_VALUE = 'MAX';
+
+console.log(_.difference([0, 1], [1, 2]));
 
 class App {
   static init() {
