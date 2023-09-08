@@ -1,6 +1,10 @@
 # Section 21: JavaScript Tooling & Workflows
 
-## Wepack
+## Official ESLint Docs:
+
+https://eslint.org/
+
+## Webpack
 
 https://webpack.js.org/
 
