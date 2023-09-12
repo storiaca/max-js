@@ -3,8 +3,14 @@ const retrBtn = document.getElementById('retrieve-btn');
 
 const dbRequest = indexedDB.open('StorageDummy', 1);
 
+let db;
+
+dbRequest.onsuccess = function (event) {
+  db = event.target.result;
+};
+
 dbRequest.onupgradeneeded = function (event) {
-  const db = event.target.result;
+  db = event.target.result;
 
   const objStore = db.createObjectStore('products', { keyPath: 'id' });
 
@@ -27,10 +33,28 @@ dbRequest.onerror = function (event) {
 };
 
 storeBtn.addEventListener('click', () => {
-  const userId = 'u123';
-  const user = {
-    name: 'Max',
-    age: 33,
+  if (!db) return;
+
+  const productsStore = db
+    .transaction('products', 'readwrite')
+    .objectStore('products');
+
+  productsStore.add({
+    id: 'p2',
+    title: 'A Second Product',
+    price: 134.99,
+    tags: ['Expensive', 'Luxury'],
+  });
+});
+
+retrBtn.addEventListener('click', () => {
+  const productsStore = db
+    .transaction('products', 'readwrite')
+    .objectStore('products');
+
+  const request = productsStore.get('p2');
+
+  request.onsuccess = function () {
+    console.log(request.result);
   };
 });
-retrBtn.addEventListener('click', () => {});

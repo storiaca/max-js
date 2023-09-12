@@ -7,3 +7,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 ## IndexedDB
 
 https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+
+## idb js
+
+https://github.com/jakearchibald/idb
