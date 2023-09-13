@@ -11,3 +11,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
 ## idb js
 
 https://github.com/jakearchibald/idb
+
+## More on localStorage / sessionStorage:
+
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
