@@ -8,7 +8,31 @@ class PlaceFinder {
     addressForm.addEventListener("submit", this.findAddressHandler);
   }
 
-  locateUserHandler() {}
+  locateUserHandler() {
+    if (!navigator.geolocation) {
+      alert(
+        "Location feature is not available in your browser - please use a more modern browser!"
+      );
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (successResult) => {
+        console.log(successResult);
+        const coordinates = {
+          lat: successResult.coords.latitude,
+          lng: successResult.coords.longitude,
+        };
+        console.log(coordinates);
+      },
+      (error) => {
+        alert(
+          "Could not locate you unfortunately. Please enter an address manually"
+        );
+      }
+    );
+  }
 
   findAddressHandler() {}
 }
+
+new PlaceFinder();
