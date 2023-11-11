@@ -7,7 +7,8 @@ const user = {
   //id: 'p1',
   [uid]: 'p1',
   name: 'Max',
-  age: 30
+  age: 30,
+  [Symbol.toStringTag]: 'User'
 }
 
 user[uid] = 'p3';
@@ -16,4 +17,6 @@ user[uid] = 'p3';
 
 user.id = 'p2'; // this should not be possible!
 
-console.log(user);
+console.log(Symbol('uid') === Symbol('uid')); // false
+
+console.log(user.toString());
