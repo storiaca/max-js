@@ -92,3 +92,15 @@ Reflect.setPrototypeOf(course, {
 // delete course.title // old way to delete property
 
 console.log(course.toString());
+
+/* Proxy API */
+const courseHandler = {
+  get(obj, propertyName) {
+    console.log(propertyName);
+    return obj[propertyName];
+  },
+};
+
+const pCourse = new Proxy(course, courseHandler);
+
+console.log(pCourse.title);
