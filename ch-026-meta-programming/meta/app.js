@@ -71,3 +71,24 @@ console.log([...company]);
 
 const persons = ["Max", "Manu"];
 console.log(persons);
+
+/* Reflect API */
+const course = {
+  title: "Javascript - The Complete Guide",
+};
+
+Reflect.setPrototypeOf(course, {
+  toString() {
+    return this.title;
+  },
+});
+
+// Reflect.defineProperty(course, 'price', {})
+
+// Reflect.deleteProperty(course, 'title'); // this work
+
+// Object.deleteProperty(course, 'title'); // this don't work
+
+// delete course.title // old way to delete property
+
+console.log(course.toString());
