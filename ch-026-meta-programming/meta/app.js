@@ -97,10 +97,13 @@ console.log(course.toString());
 const courseHandler = {
   get(obj, propertyName) {
     console.log(propertyName);
-    return obj[propertyName];
+    if (propertyName === "length") {
+      return 0;
+    }
+    return obj[propertyName] || "Not Found";
   },
 };
 
 const pCourse = new Proxy(course, courseHandler);
 
-console.log(pCourse.title);
+console.log(pCourse.title, pCourse.length, pCourse.rating);
