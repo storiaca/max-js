@@ -2,24 +2,24 @@ const form = document.getElementById("user-input");
 
 function signupHandler(event) {
   event.preventDefault();
-  const userNameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
 
-  const enteredUserName = userNameInput.value;
+  const userNameInput = document.getElementById("username");
+  const enteredUsername = userNameInput.value;
+
+  const passwordInput = document.getElementById("password");
   const enteredPassword = passwordInput.value;
 
-  if (enteredUserName.trim().length === 0) {
-    alert("Invalid input - username must not be empty");
+  if (enteredUsername.trim().length === 0) {
+    alert("Invalid input - username must not be empty!");
     return;
   }
-
   if (enteredPassword.trim().length <= 5) {
-    alert("Invalid input - password must be 6 characters or longer.");
+    alert("Invalid input - password must be six characters or longer.");
     return;
   }
 
   const user = {
-    userName: enteredUserName,
+    userName: enteredUsername,
     password: enteredPassword,
   };
 
@@ -27,5 +27,4 @@ function signupHandler(event) {
   console.log("Hi, I am " + user.userName);
 }
 
-form.addEventListener("sumbit", signupHandler);
-console.log("Nesto");
+form.addEventListener("submit", signupHandler);
